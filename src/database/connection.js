@@ -1,5 +1,6 @@
 //conexion db
 import config from '../config.js';
+import {confi} from 'dotenv'
 import sql from 'mssql';
 import { Sequelize } from 'sequelize';
 
@@ -7,7 +8,7 @@ const db = new Sequelize(
     config.dbDatabase,
     config.dbUSer,
     config.dbPassword, {
-        host: config.dbServer,
+        host: confi.DB_SERVER,
         dialect: 'mssql'
         // logging: false,
     }
