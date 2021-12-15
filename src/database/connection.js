@@ -1,17 +1,17 @@
 //conexion db
 import config from '../config.js';
-import {confi} from 'dotenv'
 import sql from 'mssql';
 import { Sequelize } from 'sequelize';
 
 const db = new Sequelize(
     config.dbDatabase,
     config.dbUSer,
-    config.dbPassword, {
-        host: confi.DB_SERVER,
+    config.dbPassword,
+    {
+        host: config.dbServer,
         dialect: 'mssql'
-        // logging: false,
     }
+    // logging: false,
 );
 
 export default db

@@ -12,7 +12,7 @@ const app = express();
 
 // import { createRequire } from "module";
 // const require = createRequire(import.meta.url);
-app.set('port', process.env.PORT || config.port)
+app.set('port', process.env.PORT || 3001)
 
 app.use(cors());
 app.use(express.json());
