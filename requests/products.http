@@ -1,0 +1,620 @@
+//Variables api
+@apiBu = http://localhost:3001/bu  
+@apiBU = http://localhost:3001/api/bu  
+@apiCountrie = http://localhost:3001/api/countries
+@apiArea = http://localhost:3001/api/area
+@subArea =http://localhost:3001/api/subArea
+@apiPlanta = http://localhost:3001/api/planta
+@apiEquipment = http://localhost:3001/api/equipment
+@apiAllEquipmentRelation = http://localhost:3001/api/AllequipmentRelation
+
+@apiEquipmentTechnical = http://localhost:3001/api/equipmentTechnical
+
+@apitechnicalSpec = http://localhost:3001/api/technicalSpecification
+
+@apiNewTechInfo = http://localhost:3001/api/NewTechInfo
+
+@apiTechSpecSValue = http://localhost:3001/api/TechSpecSValue
+
+@apitechnicalSpecValues = http://localhost:3001/api/technicalSpecificationValues
+
+@apiLine = http://localhost:3001/api/line
+
+@apiLineType = http://localhost:3001/api/lineType
+
+@apiprocedencia = http://localhost:3001/api/procedencia
+
+@apiservicesInformation = http://localhost:3001/api/servicesInformation
+
+@apiselectNewServInfo = http://localhost:3001/api/selectNewServInfo
+
+@apinewServInfo = http://localhost:3001/api/newServInfo
+
+@apinewServInfoByEquipment = http://localhost:3001/newServInfoByEquipment  
+
+@apiGetAll = http://localhost:3001/getAll  
+
+@apireadExcel = http://localhost:3001/readExcel  
+
+
+# =================   BU   ==================
+
+GET  {{apiBU}}
+
+### Add new BU
+POST {{apiBU}}
+Content-Type: application/json
+
+{
+    "Id_BU": 1,
+    "Name": "MEXS"
+}
+
+### Get a BU by id
+GET {{apiBU}}/1
+
+### Deliting a BU
+DELETE {{apiBU}}/4015
+
+### Update a BU
+PUT {{apiBU}}/3008
+Content-Type: application/json
+
+{
+    "Name": "Cgd"
+}
+
+
+# ----------------------   Countrie   -------------------------
+###
+GET {{apiCountrie}}
+
+###
+POST {{apiCountrie}}
+Content-Type: application/json
+
+{
+    "Name": "Cuasba",
+    "Id_BU": 2
+}
+
+###
+GET {{apiCountrie}}/1
+
+###
+DELETE {{apiCountrie}}/2003
+
+###
+PUT {{apiCountrie}}/1008
+Content-Type: application/json
+
+{
+    "Name": "Cuba",
+    "Id_BU": 2
+}
+
+
+# -----------------------   Area   -----------------------
+
+###
+GET {{apiArea}}
+
+###
+POST {{apiArea}}
+Content-Type: application/json
+
+{
+    "Name": "Silossdfsd",
+    "Id_Operations": 1
+}
+
+###
+GET {{apiArea}}/2
+
+###
+DELETE {{apiArea}}/2002
+
+###
+PUT {{apiArea}}/2
+Content-Type: application/json
+
+{
+    "Name": "Silos",
+    "Id_Operations": 1
+}
+
+# -----------------------   SubAreas   -----------------------
+
+###
+GET {{subArea}}
+
+###
+POST {{subArea}}
+Content-Type: application/json
+
+{
+    "Name": "Wort Kettle",
+    "Id_Areas": 1
+}
+
+###
+GET {{subArea}}/1
+
+###
+DELETE {{subArea}}/3
+
+###
+PUT {{subArea}}/3
+Content-Type: application/json
+
+{
+    "Name": "WORT",
+    "Id_Areas": 1
+}
+
+# -----------------------   Planta   -----------------------
+
+###
+GET {{apiPlanta}}
+
+###
+POST {{apiPlanta}}
+Content-Type: application/json
+
+{
+    "Name": "Cusasddsdco",
+    "Id_Countries": 3
+}
+
+###
+GET {{apiPlanta}}/1012
+
+###
+DELETE {{apiPlanta}}/1012
+
+###
+PUT {{apiPlanta}}/1012
+Content-Type: application/json
+
+{
+    "Name": "CU454545",
+    "Id_Countries": 3
+}
+
+# -----------------------   Equipment   -----------------------
+
+###
+GET {{apiEquipment}}
+
+
+###
+GET {{apiAllEquipmentRelation}}
+
+
+
+
+
+###
+POST {{apiEquipment}}
+Content-Type: application/json
+
+{
+    "Id_Equipment": "65ec843c-7a5c",
+    "Name": "Etiquetadoraaaa",
+    "code": "XC206-2SFP",
+    "Id_Procedencia": "",
+    "Estado": true,
+    "img": "hk"
+}
+
+###
+GET {{apiEquipment}}/2
+
+###
+DELETE {{apiEquipment}}/1
+
+###
+PUT {{apiEquipment}}/1003
+Content-Type: application/json
+
+{
+    "Name": "TANQUE DE SULFATO DE CALCIO 1",
+    "code": "XC206-2SFP",
+    "Id_Procedencia": 2,
+    "Estado": 0
+}
+
+
+# -----------------------   EquipmentTechnical   -----------------------
+
+###
+GET {{apiEquipmentTechnical}}
+
+###
+POST {{apiEquipmentTechnical}}
+Content-Type: application/json
+
+{
+    "Id_Equipment": 2,
+    "Id_TechnicalSpecification": 1,
+    "Value": ""
+}
+
+###
+GET {{apiEquipmentTechnical}}/6
+
+###
+DELETE {{apiEquipmentTechnical}}/1
+
+###
+PUT {{apiEquipmentTechnical}}/6
+Content-Type: application/json
+
+{
+    "Id_Equipment": 2,
+    "Id_TechnicalSpecification": 1,
+    "Value": "Equipment type Specification"
+    
+}
+
+# =================   technicalSpecification   ==================
+####
+GET  {{apitechnicalSpec}}
+
+###  --  Add new BU
+POST {{apitechnicalSpec}}
+Content-Type: application/json
+
+{
+    "EquipmentType": "Electric",
+    "CurrentConditions": "",
+    "Weight": "",
+    "OEM": "",
+    "Description": "",
+    "ModelNumber": "",
+    "SerialNumber": "",
+    "vendor": "",
+    "currentWorking": "",
+    "Id_Equipment": "2"
+}
+
+###  --  Get a BU by id
+GET {{apitechnicalSpec}}/1
+
+###  --  Deliting a BU
+DELETE {{apitechnicalSpec}}/1
+
+###  --  Update a BU
+PUT {{apitechnicalSpec}}/2002
+Content-Type: application/json
+
+{
+    "EquipmentType": null,
+    "CurrentConditions": null,
+    "Weight": null,
+    "OEM": null,
+    "Description": null,
+    "ModelNumber": null,
+    "SerialNumber": null,
+    "vendor": null,
+    "currentWorking": null,
+    "Id_Equipment": "2"
+}
+
+
+
+
+# =================  New Technical Specification   ==================
+
+###
+GET  {{apiNewTechInfo}}
+
+### Add new BU
+POST {{apiNewTechInfo}}
+Content-Type: application/json
+
+{
+    "Id_TechnicalSpecification": 2002,
+    "Name": "Protection Grade",
+    "Value": "IP55"
+}
+
+### Get a BU by id
+GET {{apiNewTechInfo}}/1
+
+### Deliting a BU
+DELETE {{apiNewTechInfo}}/1
+
+### Update a BU
+PUT {{apiNewTechInfo}}/1
+Content-Type: application/json
+
+{
+    "Id_TechnicalSpecification": 2002,
+    "Name": "Protection Grade",
+    "Value": "IP55"
+}
+
+
+
+
+
+
+# # =================   TechSpecSValue   ==================
+
+# ###
+# GET  {{apiTechSpecSValue}}
+
+# ###  --  Add new TechSpecSValue
+# POST {{apiTechSpecSValue}}
+# Content-Type: application/json
+
+# {
+#     "Id_TechnicalSpecification": 1,
+#     "Id_TechnicalSpecValues": 3,
+#     "value": "Specification Value",
+# }
+
+# ###  --  Get a TechSpecSValue by id
+# GET {{apiTechSpecSValue}}/3
+
+# ###  --  Deliting a TechSpecSValue
+# DELETE {{apiTechSpecSValue}}/1
+
+# ###  --  Update a TechSpecSValue
+# PUT {{apiTechSpecSValue}}/2
+# Content-Type: application/json
+
+# {
+#     "Id_TechnicalSpecification": 1,
+#     "Id_TechnicalSpecValues": 3,
+#     "value": "Specification Value",
+# }
+
+# # -----------------------   technicalSpecificationValues   -----------------------
+
+# ###
+# GET {{apitechnicalSpecValues}}
+
+# ###
+# POST {{apitechnicalSpecValues}}
+# Content-Type: application/json
+
+# {
+#     "id_TechnicalSpecification": "2",
+#     "value": "Good"
+# }
+
+# ###
+# GET {{apitechnicalSpecValues}}/2
+
+# ###
+# DELETE {{apitechnicalSpecValues}}/3
+
+# ###
+# PUT {{apitechnicalSpecValues}}/5
+# Content-Type: application/json
+
+# {
+#     "id_TechnicalSpecification": "2",
+#     "value": "VERY GOOD"
+# }
+
+# -----------------------   Line   -----------------------
+
+###
+GET {{apiLine}}
+
+###
+POST {{apiLine}}
+Content-Type: application/json
+
+{
+    "number": 1,
+    "Id_LineTypes": 1
+}
+
+###
+GET {{apiLine}}/1
+
+###
+DELETE {{apiLine}}/1
+
+###
+PUT {{apiLine}}/1
+Content-Type: application/json
+
+{
+    "number": 1,
+    "Id_LineTypes": 1
+}
+
+# -----------------------------------   Line Type   ---------------------------------
+###
+GET {{apiLineType}}
+
+###
+POST {{apiLineType}}
+Content-Type: application/json
+
+{
+    "Name": "Special Keg"
+}
+
+###
+GET {{apiLineType}}/1
+
+###
+DELETE {{apiLineType}}/2007
+
+###
+PUT {{apiLineType}}/1
+Content-Type: application/json
+
+{
+    "Name": "Brewline"
+}
+
+# =================   Procedencia   ==================
+
+###
+GET  {{apiprocedencia}}
+
+### Add new BU
+POST {{apiprocedencia}}
+Content-Type: application/json
+
+{
+    "Id_Line": 1,
+    "Id_Areas": 1
+
+}
+
+### Get a BU by id
+GET {{apiprocedencia}}/2
+
+### Deliting a BU
+DELETE {{apiprocedencia}}/1
+
+### Update a BU
+PUT {{apiprocedencia}}/1005
+Content-Type: application/json
+
+{
+    "id_Line": 1,
+    "id_Areas": 4
+}
+
+# =================   Services Information   ==================
+
+###
+GET  {{apiservicesInformation}}
+
+### Add new BU
+POST {{apiservicesInformation}}
+Content-Type: application/json
+
+{
+    "DateOfInstallation": "01/01/2015",
+    "DateOfDesintallation": "",
+    "DesuseReason": "",
+    "DesinstallationReason": "",
+    "ProcurementOrder": "",
+    "Id_Equipment": 2
+}
+
+### Get a BU by id
+GET {{apiservicesInformation}}/1
+
+### Deliting a BU
+DELETE {{apiprocedencia}}/1
+
+### Update a BU
+PUT {{apiservicesInformation}}/2
+Content-Type: application/json
+
+{
+    "DateOfInstallation": "01/01/2008",
+    "DateOfDesintallation": null,
+    "DesuseReason": null,
+    "DesinstallationReason": null,
+    "ProcurementOrder": null,
+    "Id_Equipment": 2
+}
+
+
+# =================   Select New Services Information   ==================
+
+###
+GET  {{apiselectNewServInfo}}
+
+### Add new BU
+POST {{apiselectNewServInfo}}
+Content-Type: application/json
+
+{
+    "Id_ServicesInformation": 1,
+    "Id_NewServInfo": 1
+}
+
+### Get a BU by id
+GET {{apiselectNewServInfo}}/1
+
+### Deliting a BU
+DELETE {{apiselectNewServInfo}}/1
+
+### Update a BU
+PUT {{apiselectNewServInfo}}/1
+Content-Type: application/json
+
+{
+    "Id_ServicesInformation": 1,
+    "Id_NewServInfo": 2
+}
+
+# =================  New Services Information   ==================
+
+###
+GET  {{apinewServInfo}}
+
+### Add new BU
+POST {{apinewServInfo}}
+Content-Type: application/json
+
+{
+    "Id_ServicesInformation": 1,
+    "Name": "Installation_reason",
+    "Value": "Installation_reason"
+}
+
+### Get a BU by id
+GET {{apinewServInfo}}/1
+
+
+
+
+###
+GET {{apinewServInfoByEquipment}}/2
+
+
+
+
+
+### Deliting a BU
+DELETE {{apinewServInfo}}/1
+
+### Update a BU
+PUT {{apinewServInfo}}/5
+Content-Type: application/json
+
+{
+    "Id_ServicesInformation": 1,
+    "Name": "Available warranty",
+    "Value": "Si"
+}
+
+
+
+
+
+
+
+
+
+
+# ----------------------------------------   GET ALL TABLES   ------------------------
+
+###
+GET  {{apiGetAll}}
+
+### Get a BU by id
+GET {{apiGetAll}}/1
+
+
+
+
+# ===========       READ EXCEL      ================
+
+###
+GET  {{apireadExcel}}
+
