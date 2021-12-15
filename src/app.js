@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import config from './config.js';
 import buRoutes from './routes/bu_routes.js';
 
 import './database/association.js';

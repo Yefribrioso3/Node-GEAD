@@ -2,19 +2,37 @@
 import config from '../config.js';
 import sql from 'mssql';
 import { Sequelize } from 'sequelize';
+import 'dotenv';
+
+
 
 const db = new Sequelize(
-    config.dbDatabase,
-    config.dbUSer,
-    config.dbPassword,
+    process.env.DBDATABASE,
+    process.env.DBUSER,
+    process.env.DBPASSWORD,
     {
-        host: config.dbServer,
+        host: process.env.DBSERVER,
         dialect: 'mssql'
     }
-    // logging: false,
-);
+
+)
 
 export default db
+
+
+
+// const db = new Sequelize(
+//     config.dbDatabase,
+//     config.dbUSer,
+//     config.dbPassword,
+//     {
+//         host: config.dbServer,
+//         dialect: 'mssql'
+//     }
+//     // logging: false,
+// );
+
+// export default db
 
 
 
