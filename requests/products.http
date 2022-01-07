@@ -34,7 +34,7 @@
 
 @apiGetAll = http://localhost:3001/getAll  
 
-@apireadExcel = http://localhost:3001/readExcel  
+@apireadExcel = http://localhost:3001/api/readExcel  
 
 
 # =================   BU   ==================

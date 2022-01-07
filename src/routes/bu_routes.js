@@ -1,5 +1,9 @@
 import { Router } from 'express';
 
+
+import { readExcel } from '../controllers/LeerExcel.js';
+
+
 import { deleteArea, getAreaById, getAreas, postArea, putArea } from '../controllers/area.controller.js';
 
 // import a from '../controllers/area.controller.js';
@@ -21,6 +25,8 @@ import { createNewEquipment, deleteEquipmentById, getAllEquipmentRelations, getE
 import { createNewEquipmentTechnical, deleteEquipmentTechnicalById, getEquipmentTechnical, getEquipmentTechnicalById, updateEquipmentTechnicalById } from '../controllers/equipmentsTech.controller.js';
 // import et from '../controllers/equipmentsTech.controller.js';
 // const { createNewEquipmentTechnical, deleteEquipmentTechnicalById, getEquipmentTechnical, getEquipmentTechnicalById, updateEquipmentTechnicalById } = et;
+
+
 
 
 // import { getAll, getAllById } from '../controllers/getAll.controller.js';
@@ -222,8 +228,9 @@ router.put('/api/selectNewTechSpec/:id',       updateselectNewTechSpecById ); //
 router.delete('/api/selectNewTechSpec/:id',    deleteselectNewTechSpecById ) 
 
 
+// =====================        LEER EXCEL         ======================
 
-
+router.get('/api/readExcel', readExcel );
 
 
 
@@ -259,9 +266,6 @@ router.delete('/api/selectNewTechSpec/:id',    deleteselectNewTechSpecById )
 
 
 
-// // =====================        LEER EXCEL         ======================
-
-// router.get('/readExcel', readExcel );
 
 
 

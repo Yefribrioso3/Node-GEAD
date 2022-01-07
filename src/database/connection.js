@@ -5,7 +5,6 @@ import { Sequelize } from 'sequelize';
 import 'dotenv';
 
 
-
 const db = new Sequelize(
     process.env.DBDATABASE,
     process.env.DBUSER,
@@ -14,7 +13,6 @@ const db = new Sequelize(
         host: process.env.DBSERVER,
         dialect: 'mssql'
     }
-
 )
 
 export default db
