@@ -77,6 +77,7 @@ import { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, update
 
 
 import { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } from '../controllers/TechnicalSpec.controller.js';
+import { createEquipos } from '../controllers/insertAll.controller.js';
 // import nts from '../controllers/TechnicalSpec.controller.js';
 // const { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } = nts;
 
@@ -231,6 +232,13 @@ router.delete('/api/selectNewTechSpec/:id',    deleteselectNewTechSpecById )
 // =====================        LEER EXCEL         ======================
 
 router.get('/api/readExcel', readExcel );
+
+
+// =====================        Insert masivo         ======================
+
+router.post('/api/createEquipos',          createEquipos ); //Insertar
+
+
 
 
 
