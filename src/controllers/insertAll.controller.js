@@ -16,53 +16,74 @@ import NewTechnicalSpecification from "../Model/NewTechnicalSpecification.js";
 
 export const createEquipos = async (req = Request, res = Responsees) => {
 
-    const { body } = req
+    // const { body } = req
+    const { cod } = req.body
+
+    console.log(body)
 
     try {
 
-        const data = await Equipment.create(body, {
-            include: [{
-                model: Procedencia,
-                as: 'procedencia',
+            const data = await Equipment.create(req.body, {
                 include: [{
-                    model: Areas,
-                    as: 'areas',
-                    include: [{
-                        model: Operations,
-                        as: 'Operations',
-                        include: [{
-                            model: Countries,
-                            as: 'countries',
-                            include: [{
-                                model: BU,
-                                as: 'bu'
-                            }]
-                        }]
-                    }, {
-                        model: SubAreas,
-                        as: 'subAreas'
-                    }]
-                }, {
-                    model: Line,
-                    as: 'line',
-                    include: [{
-                        model: LineTypes,
-                        as: 'lineTypes'
-                    }]
+                    model: Procedencia,
+                    as: 'procedencia',
                 }]
-            }, {
-                model: ServicesInformation,
-                as: 'servicesInformation'
-            }, {
-                model: TechnicalSpecification,
-                as: 'technicalSpecification',
+            })
+    
+            return res.status(201).json({ data: data })
+        } catch (error) {
+            console.log(error)
+            return res.status(500).json(error)
+        }
 
-            }]
-        })
 
-        return res.status(201).json({ data: data })
-    } catch (error) {
-        console.log(error)
-        return res.status(500).json(error)
-    }
+
+
+    // try {
+
+    //     const data = await Equipment.create(body, {
+    //         include: [{
+    //             model: Procedencia,
+    //             as: 'procedencia',
+    //             include: [{
+    //                 model: Areas,
+    //                 as: 'areas',
+    //                 include: [{
+    //                     model: Operations,
+    //                     as: 'Operations',
+    //                     include: [{
+    //                         model: Countries,
+    //                         as: 'countries',
+    //                         include: [{
+    //                             model: BU,
+    //                             as: 'bu'
+    //                         }]
+    //                     }]
+    //                 }, {
+    //                     model: SubAreas,
+    //                     as: 'subAreas'
+    //                 }]
+    //             }, {
+    //                 model: Line,
+    //                 as: 'line',
+    //                 include: [{
+    //                     model: LineTypes,
+    //                     as: 'lineTypes'
+    //                 }]
+    //             }]
+    //         }, {
+    //             model: ServicesInformation,
+    //             as: 'servicesInformation'
+    //         }, {
+    //             model: TechnicalSpecification,
+    //             as: 'technicalSpecification',
+
+    //         }]
+    //     })
+
+    //     return res.status(201).json({ data: data })
+    // } catch (error) {
+    //     console.log(error)
+    //     return res.status(500).json(error)
+    // }
 }
