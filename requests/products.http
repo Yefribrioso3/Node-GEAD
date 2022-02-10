@@ -201,12 +201,12 @@ POST {{apiEquipment}}
 Content-Type: application/json
 
 {
-    "Id_Equipment": "65ec843c-7a5c",
+    "Id_Equipment": "65ec843c",
     "Name": "Etiquetadoraaaa",
     "code": "XC206-2SFP",
-    "Id_Procedencia": "",
-    "Estado": true,
-    "img": "hk"
+    "Id_Procedencia": "35492",
+    "Estado": false,
+    "img": ""
 }
 
 ###
@@ -268,6 +268,7 @@ POST {{apitechnicalSpec}}
 Content-Type: application/json
 
 {
+    "Id_TechnicalSpecification": "0034c6d2-c3",
     "EquipmentType": "Electric",
     "CurrentConditions": "",
     "Weight": "",
@@ -277,7 +278,7 @@ Content-Type: application/json
     "SerialNumber": "",
     "vendor": "",
     "currentWorking": "",
-    "Id_Equipment": "2"
+    "Id_Equipment": "65ec843c"
 }
 
 ###  --  Get a BU by id
@@ -305,7 +306,6 @@ Content-Type: application/json
 
 
 
-
 # =================  New Technical Specification   ==================
 
 ###
@@ -316,7 +316,8 @@ POST {{apiNewTechInfo}}
 Content-Type: application/json
 
 {
-    "Id_TechnicalSpecification": 2002,
+    "Id_NewTechSpec": "5166a8d8-",
+    "Id_TechnicalSpecification": "0034c6d2-c3",
     "Name": "Protection Grade",
     "Value": "IP55"
 }
@@ -412,6 +413,7 @@ POST {{apiLine}}
 Content-Type: application/json
 
 {
+    "Id_Line": 2,
     "number": 1,
     "Id_LineTypes": 1
 }
@@ -440,6 +442,7 @@ POST {{apiLineType}}
 Content-Type: application/json
 
 {
+    "Id_LineTypes": 2,
     "Name": "Special Keg"
 }
 
@@ -467,9 +470,9 @@ POST {{apiprocedencia}}
 Content-Type: application/json
 
 {
-    "Id_Line": 1,
-    "Id_Areas": 1
-
+    "Id_Procedencia": 2,
+    "Id_Line": 2,
+    "Id_Areas": 2
 }
 
 ### Get a BU by id
@@ -497,12 +500,13 @@ POST {{apiservicesInformation}}
 Content-Type: application/json
 
 {
+    "Id_ServicesInformation": "02ff9275-e2e0x5c",
     "DateOfInstallation": "01/01/2015",
     "DateOfDesintallation": "",
     "DesuseReason": "",
     "DesinstallationReason": "",
     "ProcurementOrder": "",
-    "Id_Equipment": 2
+    "Id_Equipment": "65ec843c"
 }
 
 ### Get a BU by id
@@ -535,7 +539,8 @@ POST {{apiselectNewServInfo}}
 Content-Type: application/json
 
 {
-    "Id_ServicesInformation": 1,
+    "Id_NewServInfo": "",
+    "Id_ServicesInformation": "02ff9275-e2e0",
     "Id_NewServInfo": 1
 }
 
@@ -564,7 +569,8 @@ POST {{apinewServInfo}}
 Content-Type: application/json
 
 {
-    "Id_ServicesInformation": 1,
+    "Id_NewServInfo": "s5d4r3e1d8vt",
+    "Id_ServicesInformation": "02ff9275-e2e0",
     "Name": "Installation_reason",
     "Value": "Installation_reason"
 }
@@ -635,14 +641,15 @@ Content-Type: application/json
     "EquipmentValueInUSD": null,
     "Activo_fijo": null,
     "Soc": "Probando",
-    "Concatenar": null,
+    "Concatenar": "asd1as",
     "Clase": null,
     "Centro": null,
-    "CodPM": null,
+    "CodPM": "probando",
     "Centro_de_costos": null,
     "Fecha_de_capitalizacion": null,
     "Valor_Adquirido": null,
     "Amortizacion_acumulada": null,
+    "Valor_Contable": null,
     "Moneda": null,
     "Tipo": null,
     "Screen": null,
@@ -660,7 +667,7 @@ Content-Type: application/json
     "Latitud": null,
     "Longitud": null,
     "Period_Time": null,
-    "Id_Equipment": "00328ca5-e52e-459e-a82c-47132540f740"
+    "Id_Equipment": "1e38667c-676b-4bb6-9f13-bbc3da356ad7"
 }
 
 ### Get a BU by id

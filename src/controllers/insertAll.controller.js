@@ -12,6 +12,7 @@ import ServicesInformation from "../Model/servicesInformation.js";
 import TechnicalSpecification from "../Model/technicalSpecification.js";
 import SelectNewTechSpec from "../Model/SelectNewTechSpec.js";
 import NewTechnicalSpecification from "../Model/NewTechnicalSpecification.js";
+import FinancialInformation from "../Model/financialInformation.js";
 
 
 export const createEquipos = async (req = Request, res = Responsees) => {
@@ -72,14 +73,14 @@ export const createEquipos = async (req = Request, res = Responsees) => {
                     }]
                 }]
             }, {
+                model: FinancialInformation,
+                as: 'FinancialInformation',
+            }, {
                 model: ServicesInformation,
                 as: 'ServicesInformation'
             }, {
                 model: TechnicalSpecification,
                 as: 'TechnicalSpecification',
-            }, {
-                model: FinancialInformation,
-                as: 'FinancialInformation',
             }]
         })
 

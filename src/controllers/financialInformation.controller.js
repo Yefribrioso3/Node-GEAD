@@ -2,7 +2,7 @@
 
 import FinancialInformation from "../Model/financialInformation.js";
 
-// Obtener listado de Bu   ---- consulta ----------------
+// Obtener listado de Finalcial Information   ---- consulta ----------------
 export const getFinancialInformation = async (req, res) => {
     const financialInformation = await FinancialInformation.findAll();
 

@@ -61,6 +61,10 @@ Line.belongsTo(LineTypes, {as: 'lineTypes', foreignKey: 'Id_LineTypes' })
 LineTypes.hasMany(Line, { foreignKey: 'Id_LineTypes' })
 
 
+FinancialInformation.belongsTo(Equipment, { as: 'equipment', foreignKey: 'Id_Equipment' })
+Equipment.hasOne(FinancialInformation, { foreignKey: 'Id_Equipment' })
+
+
 ServicesInformation.belongsTo(Equipment, { as: 'equipment', foreignKey: 'Id_Equipment' })
 Equipment.hasOne(ServicesInformation, { foreignKey: 'Id_Equipment' })
 
@@ -93,8 +97,6 @@ NewTechnicalSpecification.belongsToMany(TechnicalSpecification, {
 })
 
 
-FinancialInformation.belongsTo(Equipment, { as: 'equipment', foreignKey: 'Id_Equipment' })
-Equipment.hasOne(FinancialInformation, { foreignKey: 'Id_Equipment' })
 
 // Equipment.belongsToMany(TechnicalSpecification, { 
 //     through: 'EquipmentsTechnicals', 
