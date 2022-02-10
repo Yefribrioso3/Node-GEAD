@@ -78,6 +78,7 @@ import { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, update
 
 import { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } from '../controllers/TechnicalSpec.controller.js';
 import { createEquipos } from '../controllers/insertAll.controller.js';
+import { createNewFinancialInformation, deleteFinancialInformationById, getFinancialInformation, getFinancialInformationById, updateFinancialInformationById } from '../controllers/financialInformation.controller.js';
 // import nts from '../controllers/TechnicalSpec.controller.js';
 // const { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } = nts;
 
@@ -239,6 +240,14 @@ router.get('/api/readExcel', readExcel );
 router.post('/api/createEquipos',          createEquipos ); //Insertar
 
 
+
+// ================   TechnicalSpecification  ====================
+
+router.get('/api/financialInformation',           getFinancialInformation ); 
+router.get('/api/financialInformation/:id',       getFinancialInformationById ); //Optener por id
+router.post('/api/financialInformation',          createNewFinancialInformation ); //Insertar
+router.put('/api/financialInformation/:id',       updateFinancialInformationById ); //Actualizar
+router.delete('/api/financialInformation/:id',    deleteFinancialInformationById ); 
 
 
 

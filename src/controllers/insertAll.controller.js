@@ -77,7 +77,9 @@ export const createEquipos = async (req = Request, res = Responsees) => {
             }, {
                 model: TechnicalSpecification,
                 as: 'TechnicalSpecification',
-
+            }, {
+                model: FinancialInformation,
+                as: 'FinancialInformation',
             }]
         })
 

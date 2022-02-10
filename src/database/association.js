@@ -25,6 +25,9 @@ import Procedencia from "../Model/procedencia.js"
 import ServicesInformation from "../Model/servicesInformation.js"
 import SubAreas from "../Model/subareas.js"
 import TechnicalSpecification from "../Model/technicalSpecification.js"
+import FinancialInformation from "../Model/financialInformation.js"
+
+
 
 
 Countries.belongsTo(BU, { as: 'bu', foreignKey: 'Id_BU'})
@@ -89,6 +92,9 @@ NewTechnicalSpecification.belongsToMany(TechnicalSpecification, {
     foreignKey: 'Id_NewTechSpec'
 })
 
+
+FinancialInformation.belongsTo(Equipment, { as: 'equipment', foreignKey: 'Id_Equipment' })
+Equipment.hasOne(FinancialInformation, { foreignKey: 'Id_Equipment' })
 
 // Equipment.belongsToMany(TechnicalSpecification, { 
 //     through: 'EquipmentsTechnicals', 

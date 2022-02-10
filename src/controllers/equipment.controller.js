@@ -37,9 +37,7 @@ export const getAllEquipmentRelations = async (req, res) => {
     //                             model: LineTypes,
     //                             as: 'lineTypes'
     //                         }
-
     //                     ]
-
     //                 },
     //                 {
     //                     model: Areas,
@@ -60,25 +58,19 @@ export const getAllEquipmentRelations = async (req, res) => {
     //                                             model: BU,
     //                                             as: 'bu'
     //                                         }
-
     //                                     ]
     //                                 }
-
     //                             ]
     //                         }
-
     //                     ]
     //                 }
-
     //             ]
     //         },
     //         {
     //             model: ServicesInformation,
     //             as: 'ServicesInformation',
     //             include: { all: true }
-
     //         }
-
     //     ],
     // })
 

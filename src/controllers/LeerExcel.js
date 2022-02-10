@@ -19,9 +19,7 @@ export const readExcel = (req, res) => {
                     ...dato,
                     Date_of_Installation: formatearFechaExcel(dato.Date_of_Installation),
                     Date_of_Desintallation: formatearFechaExcel(dato.Date_of_Desintallation)
-
                 });
-                
             }
             // workbookSheets
             // console.log(dataExcel);
@@ -75,5 +73,5 @@ export const readExcel = (req, res) => {
 
     leerExcel(`C:\\DBStructure\\MAZ–LTS–DBStructure-210830.xlsx`);
 }
-
+// MAZ–LTS–DBStructure-220202.xlsx
 
