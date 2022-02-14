@@ -38,6 +38,8 @@
 
 @apireadExcel = http://localhost:3001/api/readExcel  
 
+@createEquipos = http://localhost:3001/api/createEquipos
+
 
 # =================   BU   ==================
 
@@ -667,11 +669,11 @@ Content-Type: application/json
     "Latitud": null,
     "Longitud": null,
     "Period_Time": null,
-    "Id_Equipment": "1e38667c-676b-4bb6-9f13-bbc3da356ad7"
+    "Id_Equipment": "1009"
 }
 
 ### Get a BU by id
-GET {{apiFinancialInformation}}/1
+GET {{apiFinancialInformation}}/2626
 
 ### Deliting a BU
 DELETE {{apiFinancialInformation}}/1
@@ -710,4 +712,15 @@ Content-Type: application/json
     "Longitud": null,
     "Period_Time": null,
     "Id_Equipment": "00328ca5-e52e-459e-a82c-47132540f740"
+}
+
+
+
+
+### Add new BU
+POST {{createEquipos}}
+Content-Type: application/json
+
+{
+    
 }

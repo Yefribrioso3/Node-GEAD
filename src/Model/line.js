@@ -10,7 +10,7 @@ const Line = db.define("Line", {
         allowNull: false
     },
     number: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true
     },
     Id_LineTypes: {

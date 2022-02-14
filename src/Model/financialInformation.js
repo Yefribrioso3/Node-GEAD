@@ -14,7 +14,7 @@ const FinancialInformation = db.define("FinancialInformation", {
         allowNull: true
     },
     Activo_fijo: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         allowNull: true
     },
     Soc: {

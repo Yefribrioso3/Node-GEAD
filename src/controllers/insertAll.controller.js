@@ -20,7 +20,7 @@ export const createEquipos = async (req = Request, res = Responsees) => {
     // const { body } = req
     // const { cod } = req.body
 
-    console.log(req.body)
+    console.log("prueba")
 
     // try {
 
