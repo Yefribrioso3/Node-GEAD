@@ -7,8 +7,7 @@ import db from '../database/connection.js';
 const TechnicalSpecification = db.define("TechnicalSpecification", {
     Id_TechnicalSpecification: {
         type: DataTypes.STRING,
-        primaryKey: true,
-        allowNull: true
+        primaryKey: true
     },
     EquipmentType: {
         type: DataTypes.STRING,

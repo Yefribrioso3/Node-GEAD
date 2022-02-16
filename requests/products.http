@@ -38,7 +38,9 @@
 
 @apireadExcel = http://localhost:3001/api/readExcel  
 
-@createEquipos = http://localhost:3001/api/createEquipos
+@apicreateEquipos = http://localhost:3001/api/createEquipos
+
+@apioptionalTechInfo = http://localhost:3001/api/optionalTechInfo
 
 
 # =================   BU   ==================
@@ -718,9 +720,50 @@ Content-Type: application/json
 
 
 ### Add new BU
-POST {{createEquipos}}
+POST {{apicreateEquipos}}
 Content-Type: application/json
 
 {
     
 }
+
+//   -------------------    Optional tech info  ----------------
+
+
+
+### Update
+POST {{apioptionalTechInfo}}
+Content-Type: application/json
+
+{
+    "EquipmentValueInUSD": null,
+    "Activo_fijo": null,
+    "Soc": "Probando",
+    "Concatenar": null,
+    "Clase": null,
+    "Centro": null,
+    "CodPM": null,
+    "Centro_de_costos": null,
+    "Fecha_de_capitalizacion": null,
+    "Valor_Adquirido": null,
+    "Amortizacion_acumulada": null,
+    "Moneda": null,
+    "Tipo": null,
+    "Screen": null,
+    "Nom_Clase": null,
+    "Nom_Ce": null,
+    "Encontrado_SI_NO": null,
+    "Estado_del_Activo": null,
+    "Categoria": null,
+    "Gerencia": null,
+    "Codigo_De_Barras": null,
+    "DI": null,
+    "SN": null,
+    "Depreciacion_acumulada_ajustada": null,
+    "Tasa_Cambio_contra_dolar": null,
+    "Latitud": null,
+    "Longitud": null,
+    "Period_Time": null,
+    "Id_Equipment": "00328ca5-e52e-459e-a82c-47132540f740"
+}
+

@@ -13,6 +13,7 @@ import TechnicalSpecification from "../Model/technicalSpecification.js";
 import SelectNewTechSpec from "../Model/SelectNewTechSpec.js";
 import NewTechnicalSpecification from "../Model/NewTechnicalSpecification.js";
 import FinancialInformation from "../Model/financialInformation.js";
+import OptionalTechInfo from "../Model/optionalTechInfo.js";
 
 
 export const createEquipos = async (req = Request, res = Responsees) => {
@@ -20,7 +21,7 @@ export const createEquipos = async (req = Request, res = Responsees) => {
     // const { body } = req
     // const { cod } = req.body
 
-    console.log("prueba")
+    // console.log("prueba")
 
     // try {
 
@@ -81,6 +82,10 @@ export const createEquipos = async (req = Request, res = Responsees) => {
             }, {
                 model: TechnicalSpecification,
                 as: 'TechnicalSpecification',
+                include: [{
+                    model: OptionalTechInfo,
+                    as: 'OptionalTechInfo'
+                }]
             }]
         })
 

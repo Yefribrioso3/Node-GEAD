@@ -60,7 +60,7 @@ import Countries from "../Model/countries.js";
         } catch (error) {
             console.log(error)
             res.status(500).json({
-                msg: 'Comuniquese con el administrador'
+                msg: 'Comuniquese con el administrador', error
             })
         }
     }

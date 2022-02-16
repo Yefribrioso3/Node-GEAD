@@ -56,7 +56,7 @@ export const createNewSubArea = async (req, res) => {
     } catch (error) {
         console.log(error)
         res.status(500).json({
-            msg: 'Comuniquese con el administrador'
+            msg: 'Comuniquese con el administrador', error
         })
     }
 };

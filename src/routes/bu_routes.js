@@ -79,6 +79,7 @@ import { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, update
 import { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } from '../controllers/TechnicalSpec.controller.js';
 import { createEquipos } from '../controllers/insertAll.controller.js';
 import { createNewFinancialInformation, deleteFinancialInformationById, getFinancialInformation, getFinancialInformationById, updateFinancialInformationById } from '../controllers/financialInformation.controller.js';
+import { createNewOptionalTechInfo, deleteOptionalTechInfoById, getOptionalTechInfo, getOptionalTechInfoById, updateOptionalTechInfoById } from '../controllers/optionalTechInfo.controller.js';
 // import nts from '../controllers/TechnicalSpec.controller.js';
 // const { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } = nts;
 
@@ -241,13 +242,23 @@ router.post('/api/createEquipos',          createEquipos ); //Insertar
 
 
 
-// ================   TechnicalSpecification  ====================
+// ================   Financial Information  ====================
 
 router.get('/api/financialInformation',           getFinancialInformation ); 
 router.get('/api/financialInformation/:id',       getFinancialInformationById ); //Optener por id
 router.post('/api/financialInformation',          createNewFinancialInformation ); //Insertar
 router.put('/api/financialInformation/:id',       updateFinancialInformationById ); //Actualizar
 router.delete('/api/financialInformation/:id',    deleteFinancialInformationById ); 
+
+// ================   Optional TechInfo  ====================
+
+router.get('/api/optionalTechInfo',           getOptionalTechInfo ); 
+router.get('/api/optionalTechInfo/:id',       getOptionalTechInfoById ); //Optener por id
+router.post('/api/optionalTechInfo',          createNewOptionalTechInfo ); //Insertar
+router.put('/api/optionalTechInfo/:id',       updateOptionalTechInfoById ); //Actualizar
+router.delete('/api/optionalTechInfo/:id',    deleteOptionalTechInfoById ); 
+
+
 
 
 
