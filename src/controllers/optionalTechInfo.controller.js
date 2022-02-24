@@ -3,7 +3,6 @@
 import OptionalTechInfo from "../Model/optionalTechInfo.js";
 
 
-
 // Obtener listado de Finalcial Information   ---- consulta ----------------
 export const getOptionalTechInfo = async (req, res) => {
     const optionalTechInfo = await OptionalTechInfo.findAll();
@@ -46,7 +45,6 @@ export const getOptionalTechInfoById = async (req, res) => {
     }
 };
 
-
 export const deleteOptionalTechInfoById = async (req, res) => {
 
     const { id } = req.params;
@@ -63,7 +61,6 @@ export const deleteOptionalTechInfoById = async (req, res) => {
 
     res.json('Informacion tecnica Eliminada');
 };
-
 
 export const updateOptionalTechInfoById = async (req, res) => {
 

@@ -5,13 +5,17 @@ import db from '../database/connection.js';
 
 
 const User = db.define("User", {
-    Id_User: {
+    Id_Usuario: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
     Name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    LastName: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -37,7 +41,5 @@ const User = db.define("User", {
     timestamps: false
 }
 );
-
-let hashed_pass = await bcrypt.hash(req.body.password, 10)
 
 export default User; 
