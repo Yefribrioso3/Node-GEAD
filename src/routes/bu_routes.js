@@ -76,6 +76,8 @@ import { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, update
 // const { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, updateSubAreaById } = s;
 
 
+import { login, register } from '../controllers/auth.controller'
+
 import { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } from '../controllers/TechnicalSpec.controller.js';
 import { createEquipos } from '../controllers/insertAll.controller.js';
 import { createNewFinancialInformation, deleteFinancialInformationById, getFinancialInformation, getFinancialInformationById, updateFinancialInformationById } from '../controllers/financialInformation.controller.js';
@@ -122,6 +124,11 @@ router.get('/api/area/:id',     getAreaById ); //Optener por id
 router.post('/api/area',        postArea ); //Insertar
 router.put('/api/area/:id',     putArea ); //Actualizar
 router.delete('/api/area/:id',  deleteArea ); 
+
+// ================   Router Auth   =================================
+
+router.post('/api/login',         login ); 
+router.post('/api/register',     register ); 
 
 // ==============   Router SubArea   =================================
 
