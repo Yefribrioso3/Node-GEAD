@@ -28,7 +28,7 @@ const User = db.define("User", {
     password: {
         type: DataTypes.STRING,
         min: 8,
-        is: ["?=.*[a-z]", "?=.*[A-Z]", "?=.*[0-9]"]
+        // is: ["?=.*[a-z]", "?=.*[A-Z]", "?=.*[0-9]"]
     }, 
     roleId: {
         type: DataTypes.INTEGER,

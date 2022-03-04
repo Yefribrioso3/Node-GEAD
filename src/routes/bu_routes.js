@@ -76,7 +76,7 @@ import { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, update
 // const { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, updateSubAreaById } = s;
 
 
-import { login, register } from '../controllers/auth.controller'
+import { login, register } from '../controllers/auth.controller.js'
 
 import { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } from '../controllers/TechnicalSpec.controller.js';
 import { createEquipos } from '../controllers/insertAll.controller.js';

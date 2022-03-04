@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import User from '../Model/User'
+import User from '../Model/User.js'
 //const Role = require('../models/role.model')
 //const { transporter } = require('../config/mailer')
 
@@ -30,7 +30,7 @@ export const login = async (req, res) => {
 export const register = async (req, res) => {
     let { Name, LastName, email, password, roleId } = req.body
 
-    if (!Name || !LastName || !email || !password || !roleId)
+    if (!Name || !LastName || !email || !password)
         return res.status(400).json({msg: 'all fields are required'})
 
     try {
