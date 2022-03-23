@@ -42,10 +42,19 @@
 
 @apioptionalTechInfo = http://localhost:3001/api/optionalTechInfo
 
+@apiuser = http://localhost:3001/api/user
+
+@apiuserToken = http://localhost:3001/api/users
+
+
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg3LCJyb2xlIjoxLCJpYXQiOjE2NDgwMTc0NjUsImV4cCI6MTY0ODEwMzg2NX0.zYso96BNKMPDFHWUoWG_4w-I1slEdCGcdOMOPi2baAU
 
 # =================   BU   ==================
 
 GET  {{apiBU}}
+
+###
+GET  {{apiuserToken}}/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjg3LCJyb2xlIjoxLCJpYXQiOjE2NDgwMTc0NjUsImV4cCI6MTY0ODEwMzg2NX0.zYso96BNKMPDFHWUoWG_4w-I1slEdCGcdOMOPi2baAU
 
 ### Add new BU
 POST {{apiBU}}
@@ -767,3 +776,23 @@ Content-Type: application/json
     "Id_Equipment": "00328ca5-e52e-459e-a82c-47132540f740"
 }
 
+//      USER
+
+
+
+
+
+###
+GET  {{apiuser}}
+
+###
+PUT {{apiuser}}/287
+Content-Type: application/json
+
+{
+    "Name": "Yefri",
+    "LastName": "Valenzuela",
+    "email": "yefribrioso3@gmail.com",
+    "password": "Prueba@1",
+    "roleId": 1
+}

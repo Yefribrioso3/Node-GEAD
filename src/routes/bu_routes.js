@@ -1,8 +1,7 @@
 import { Router } from 'express';
-
+import { authMdlw } from '../middlewares/auth.middleware.js'
 
 import { readExcel } from '../controllers/LeerExcel.js';
-
 
 import { deleteArea, getAreaById, getAreas, postArea, putArea } from '../controllers/area.controller.js';
 
@@ -12,7 +11,6 @@ import { deleteArea, getAreaById, getAreas, postArea, putArea } from '../control
 import { getBU, getBuByID, postBU, putBU, deleteBU } from '../controllers/bu.controller.js';
 // import pkg from '../controllers/bu.controller.js';
 // const { getBU, getBuByID, postBU, putBU, deleteBU } = pkg;
-
 
 import { deleteCountrie, getCountrieById, getCountries, postCountrie, putCountrie } from '../controllers/countries.controller.js';
 // import c from '../controllers/countries.controller.js';
@@ -25,9 +23,6 @@ import { createNewEquipment, deleteEquipmentById, getAllEquipmentRelations, getE
 import { createNewEquipmentTechnical, deleteEquipmentTechnicalById, getEquipmentTechnical, getEquipmentTechnicalById, updateEquipmentTechnicalById } from '../controllers/equipmentsTech.controller.js';
 // import et from '../controllers/equipmentsTech.controller.js';
 // const { createNewEquipmentTechnical, deleteEquipmentTechnicalById, getEquipmentTechnical, getEquipmentTechnicalById, updateEquipmentTechnicalById } = et;
-
-
-
 
 // import { getAll, getAllById } from '../controllers/getAll.controller.js';
 // import { readExcel } from '../controllers/LeerExcel.js';
@@ -61,11 +56,9 @@ import { createNewSelectNewServInfo, deleteSelectNewServInfoById, getSelectNewSe
 // import n from '../controllers/SelectNewServInfo.controller.js';
 // const { createNewSelectNewServInfo, deleteSelectNewServInfoById, getSelectNewServInfo, getSelectNewServInfoById, updateSelectNewServInfoById } = n;
 
-
 import { createselectNewTechSpec, deleteselectNewTechSpecById, getselectNewTechSpec, getselectNewTechSpecById, updateselectNewTechSpecById } from '../controllers/SelectNewTechSpec.controller.js';
 // import snts from '../controllers/SelectNewTechSpec.controller.js';
 // const { createselectNewTechSpec, deleteselectNewTechSpecById, getselectNewTechSpec, getselectNewTechSpecById, updateselectNewTechSpecById } = snts;
-
 
 import { createServicesInformation, deleteServicesInformationById, getServicesInformation, getServicesInformationById, updateServicesInformationById } from '../controllers/ServicesInformation.controller.js';
 // import si from '../controllers/ServicesInformation.controller.js';
@@ -75,13 +68,15 @@ import { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, update
 // import s from '../controllers/subAreas.controller.js';
 // const { createNewSubArea, deleteSubAreaById, getSubArea, getSubAreaById, updateSubAreaById } = s;
 
-
 import { login, register } from '../controllers/auth.controller.js'
 
 import { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } from '../controllers/TechnicalSpec.controller.js';
 import { createEquipos } from '../controllers/insertAll.controller.js';
 import { createNewFinancialInformation, deleteFinancialInformationById, getFinancialInformation, getFinancialInformationById, updateFinancialInformationById } from '../controllers/financialInformation.controller.js';
 import { createNewOptionalTechInfo, deleteOptionalTechInfoById, getOptionalTechInfo, getOptionalTechInfoById, updateOptionalTechInfoById } from '../controllers/optionalTechInfo.controller.js';
+
+import { getAllUsers, getUserById, getUserByToken, updateUser } from '../controllers/User.controller.js'
+
 // import nts from '../controllers/TechnicalSpec.controller.js';
 // const { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } = nts;
 
@@ -265,6 +260,13 @@ router.post('/api/optionalTechInfo',          createNewOptionalTechInfo ); //Ins
 router.put('/api/optionalTechInfo/:id',       updateOptionalTechInfoById ); //Actualizar
 router.delete('/api/optionalTechInfo/:id',    deleteOptionalTechInfoById ); 
 
+// ================   User  ====================
+
+
+router.get('/api/user/', [authMdlw],   getAllUsers); 
+router.get('/api/user/user-data', [authMdlw],   getUserByToken ); //Optener por Token
+router.get('/api/user/:id', [authMdlw],         getUserById ); //Optener por id
+router.put('/api/user/:id', [authMdlw],         updateUser ); //Actualizar
 
 
 
