@@ -35,7 +35,8 @@ import { createNewLineType, deleteLineTypeById, getLineType, getLineTypeById, up
 // import lt from '../controllers/lineType.controller.js';
 // const { createNewLineType, deleteLineTypeById, getLineType, getLineTypeById, updateLineTypeById } = lt;
 
-import { createNewServInfo, deleteNewServInfoById, getAllNewServiInfoByEquipmentId, getNewServInfo, getNewServInfoById, updateNewServInfoById } from '../controllers/NewServicesInfo.controller.js';
+import { createNewServInfo, deleteNewServInfoById, getNewServInfo, getNewServInfoById, updateNewServInfoById } from '../controllers/NewServicesInfo.controller.js';
+// getAllNewServiInfoByEquipmentId
 // import nsi from '../controllers/NewServicesInfo.controller.js';
 // const { createNewServInfo, deleteNewServInfoById, getAllNewServiInfoByEquipmentId, getNewServInfo, getNewServInfoById, updateNewServInfoById } = nsi;
 
@@ -193,8 +194,7 @@ router.put('/api/newServInfo/:id',      updateNewServInfoById ); //Actualizar
 router.delete('/api/newServInfo/:id',   deleteNewServInfoById ); 
 
 
-
-router.get('/newServInfoByEquipment/:id', getAllNewServiInfoByEquipmentId ); //Optener por Equipment id
+// router.get('/newServInfoByEquipment/:id', getAllNewServiInfoByEquipmentId ); //Optener por Equipment id
 
 
 // ================   EquipmentTechnical  ====================

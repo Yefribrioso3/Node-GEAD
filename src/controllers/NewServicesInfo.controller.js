@@ -1,9 +1,9 @@
 // CONSULTAS A LA BASE DE DATOS
-
-import { getConnection } from "../database/connection.js";
-// import { sql } from "../database/connection";
-import { queries } from "../database/querys.js";
 import NewServicesInformation from "../Model/newServicesInformation.js";
+
+// import { getConnection } from "../database/connection.js";
+// import { sql } from "../database/connection";
+// import { queries } from "../database/querys.js";
 
 // Obtener listado de NewServInfo  ----  Consulta  ----------------
 export const getNewServInfo = async (req, res) => {
@@ -109,17 +109,17 @@ export const updateNewServInfoById = async (req, res) => {
 // ------------   Get all New ServicesInformation by Equipment Id ---------------------
 
 
-export const getAllNewServiInfoByEquipmentId = async (req, res) => {
-    const { id } = req.params;
+// export const getAllNewServiInfoByEquipmentId = async (req, res) => {
+//     const { id } = req.params;
 
-    const pool = await getConnection();
-    const result = await pool
-        .request()
-        .input('Id', id)
-        .query(queries.getAllNewServicesInfo_ByEquipmentId)
+//     const pool = await getConnection();
+//     const result = await pool
+//         .request()
+//         .input('Id', id)
+//         .query(queries.getAllNewServicesInfo_ByEquipmentId)
 
-    res.send(result.recordset)
-};
+//     res.send(result.recordset)
+// };
 
 
 
