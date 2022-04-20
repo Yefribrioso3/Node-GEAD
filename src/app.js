@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import buRoutes from './routes/bu_routes.js';
 import './database/association.js';
+import xssAdvanced from "xss-advanced";
 // require('./database/association.js')
 // const cors = require('cors');
 
@@ -13,6 +14,7 @@ app.set('port', process.env.PORT || 3001 )
 
 app.use(cors());
 app.use(express.json());
+app.use(xssAdvanced());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(buRoutes);
