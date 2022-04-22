@@ -16,7 +16,7 @@ export const login = async (req, res) => {
 
         if (!isMatch) return res.status(400).json({msg: 'pass not match'})
         
-        const token = await jwt.sign({id: _user.Id_Usuario, role: _user.roleId}, process.env.JWT_KEY || 'secretKey', { expiresIn: '24h' })
+        const token = await jwt.sign({id: _user.Id_Usuario, role: _user.roleId}, process.env.JWT_KEY, { expiresIn: '24h' })
 
         delete _user.dataValues.password
 

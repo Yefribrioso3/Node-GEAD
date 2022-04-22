@@ -10,13 +10,13 @@ export const authMdlw = async (req, res, next) => {
         //token verify
         let decode = ''
         try {        
-            decode = await jwt.verify(token, process.env.JWT_KEY || 'secretKey')
+            decode = await jwt.verify(token, process.env.JWT_KEY)
         } catch (error) {
             return res.status(401).json({error})
         }
 
         //token refresh (refresh expiration date)
-        const tokenRefreshed = await jwt.sign({id: decode.id, role: decode.role}, process.env.JWT_KEY || 'secretKey', { expiresIn: '24h' })
+        const tokenRefreshed = await jwt.sign({id: decode.id, role: decode.role}, process.env.JWT_KEY, { expiresIn: '24h' })
         res.setHeader('tokenRefreshed', tokenRefreshed)
 
         const _user = await User.findByPk(decode.id)
