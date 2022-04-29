@@ -129,6 +129,14 @@ const FinancialInformation = db.define("FinancialInformation", {
         type: DataTypes.STRING,
         allowNull: true
     },
+    EncargadoActualizacion: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    FechaActualizacion: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
 },{
     freezeTableName: true,
     createdAt: false,
