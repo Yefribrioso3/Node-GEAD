@@ -61,6 +61,10 @@ const FinancialInformation = db.define("FinancialInformation", {
         type: DataTypes.STRING,
         allowNull: true
     },
+    Cantidad: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
     Tipo: {
         type: DataTypes.STRING,
         allowNull: true
