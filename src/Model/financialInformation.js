@@ -2,7 +2,6 @@ import pkg from 'sequelize';
 const  { DataTypes } = pkg;
 import db from '../database/connection.js';
 
-
 const FinancialInformation = db.define("FinancialInformation", {
     Id_FinancialInformation: {
         type: DataTypes.INTEGER,
