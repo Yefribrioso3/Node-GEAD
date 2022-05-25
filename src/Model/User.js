@@ -33,7 +33,11 @@ const User = db.define("User", {
     roleId: {
         type: DataTypes.INTEGER,
         field: 'RoleID'
-    }
+    },
+    Estado: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
+    },
 }, {
     freezeTableName: true,
     createdAt: false,

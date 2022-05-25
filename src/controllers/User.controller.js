@@ -11,11 +11,11 @@ import User from '../Model/User.js'
 export const getAllUsers = async (req, res) => {
     try {
         // const users = await User.findAll({ include: [{ model: Project, as: 'projects'}, { model: Supplier, as: 'supplier'}, { model: EngArea, as: 'areas'}], attributes: ['id', 'name', 'lastName', 'email', 'status'] })
-        const users = await User.findAll({ attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId'] })
-
+        const users = await User.findAll({ where: { Estado : true}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'Estado'] })
+        
         return res.status(200).json({data: users})
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return res.status(500).json(error)
     }
 }
@@ -24,7 +24,7 @@ export const getUserByToken = async (req, res) => {
     try {   
         return res.status(200).json({data: req.user})
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return res.status(500).json(error)
     }
 }
@@ -40,7 +40,7 @@ export const getUserById = async (req, res) => {
 
         return res.status(200).json({data: rest})
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return res.status(500).json(error)
     }
 }
@@ -69,7 +69,7 @@ export const assignProjectsToUser = async (req, res) => {
 
         return res.status(200).json({data: rest})
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return res.status(500).json(error)
     }
 }
@@ -99,7 +99,7 @@ export const updateUser = async (req, res) => {
 
         return res.status(200).json({data: user})
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return res.status(500).json(error)
     }
 }

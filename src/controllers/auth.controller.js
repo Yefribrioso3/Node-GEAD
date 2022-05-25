@@ -44,7 +44,7 @@ export const register = async (req, res) => {
             return res.status(400).json({ok: false, msg: 'email repeated'})
         }
 
-        let hashed_pass = await bcrypt.hash(req.body.password, process.env.BCRYPT)
+        let hashed_pass = await bcrypt.hash(req.body.password, Number( process.env.BCRYPT ))
 
         _user = new User({
             Name,
