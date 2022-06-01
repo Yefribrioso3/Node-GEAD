@@ -36,8 +36,17 @@ const User = db.define("User", {
     },
     Estado: {
         type: DataTypes.BOOLEAN,
-        allowNull: false
+        allowNull: true
     },
+    Id_Location: {
+        type: DataTypes.INTEGER,
+        field: 'Id_Location',
+        allowNull: true
+    },
+    LastLogin: {
+        type: DataTypes.DATE,
+        allowNull: true
+    }
 }, {
     freezeTableName: true,
     createdAt: false,

@@ -27,6 +27,8 @@ import SubAreas from "../Model/subareas.js"
 import TechnicalSpecification from "../Model/technicalSpecification.js"
 import FinancialInformation from "../Model/financialInformation.js"
 import OptionalTechInfo from "../Model/optionalTechInfo.js"
+import Location from "../Model/location.js"
+import User from "../Model/User.js"
 
 
 
@@ -101,6 +103,9 @@ NewTechnicalSpecification.belongsToMany(TechnicalSpecification, {
 OptionalTechInfo.belongsTo(TechnicalSpecification, { as: 'TechnicalSpecification', foreignKey: 'Id_TechnicalSpecification' })
 TechnicalSpecification.hasOne(OptionalTechInfo, { foreignKey: 'Id_TechnicalSpecification' })
 
+
+Location.belongsTo(User, { as: 'User', foreignKey: 'Id_Location' })
+User.hasOne(Location, { foreignKey: 'Id_Location' })
 
 // Equipment.belongsToMany(TechnicalSpecification, { 
 //     through: 'EquipmentsTechnicals', 

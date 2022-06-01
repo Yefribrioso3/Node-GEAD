@@ -77,6 +77,7 @@ import { createNewFinancialInformation, deleteFinancialInformationById, getFinan
 import { createNewOptionalTechInfo, deleteOptionalTechInfoById, getOptionalTechInfo, getOptionalTechInfoById, updateOptionalTechInfoById } from '../controllers/optionalTechInfo.controller.js';
 
 import { getAllUsers, getUserById, getUserByToken, updateUser } from '../controllers/User.controller.js'
+import { getLocation, getLocationByID, postLocation, putLocation } from '../controllers/Location.controller.js';
 
 // import nts from '../controllers/TechnicalSpec.controller.js';
 // const { createNewTechnicalSpec, deleteTechnicalSpecById, getTechnicalSpec, getTechnicalSpecById, updateTechnicalSpecById } = nts;
@@ -263,11 +264,17 @@ router.delete('/api/optionalTechInfo/:id',    deleteOptionalTechInfoById );
 // ================   User  ====================
 
 
-router.get('/api/user/', [authMdlw],   getAllUsers); 
+router.get('/api/user/', [authMdlw],            getAllUsers); 
 router.get('/api/user/user-data', [authMdlw],   getUserByToken ); //Optener por Token
 router.get('/api/user/:id', [authMdlw],         getUserById ); //Optener por id
 router.put('/api/user/:id', [authMdlw],         updateUser ); //Actualizar
 
+// ================   Location  ====================
+
+router.get('/api/location/', [authMdlw],            getLocation); 
+router.get('/api/location/:id', [authMdlw],         getLocationByID ); //Optener por id
+router.post('/api/location', [authMdlw],            postLocation ); //Optener por Token
+router.put('/api/location/:id', [authMdlw],         putLocation ); //Actualizar
 
 
 
@@ -310,5 +317,3 @@ router.put('/api/user/:id', [authMdlw],         updateUser ); //Actualizar
 
 
 export default router;
-
-

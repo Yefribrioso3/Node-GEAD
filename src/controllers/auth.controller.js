@@ -5,11 +5,11 @@ import User from '../Model/User.js'
 //const { transporter } = require('../config/mailer')
 
 export const login = async (req, res) => {
-    const { email, password } = req.body
+    const { email, password, LastLogin } = req.body
 
     try {
-        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'password']})
-
+        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'password', 'Estado', 'LastLogin', 'Id_Location']})
+        
         if (!_user) return res.status(404).json({msg: 'user not found'})
 
         const isMatch = await bcrypt.compare(password, _user.password)
@@ -20,6 +20,13 @@ export const login = async (req, res) => {
 
         delete _user.dataValues.password
 
+        const user = await User.findByPk(_user.Id_Usuario)
+
+        await user.update( { //Tomamos solo los datos que deseamos actualizar
+            LastLogin: LastLogin
+        } );
+
+
         return res.status(200).json({data: _user, token})
     } catch (error) {
         console.log(error)
@@ -28,9 +35,9 @@ export const login = async (req, res) => {
 }
 
 export const register = async (req, res) => {
-    let { Name, LastName, email, password, roleId } = req.body
+    let { Name, LastName, email, password, roleId, Estado, LastLogin, Id_Location } = req.body
 
-    if (!Name || !LastName || !email || !password)
+    if (!Name || !LastName || !email || !password || !Estado || !Id_Location)
         return res.status(400).json({msg: 'all fields are required'})
 
     try {
@@ -51,7 +58,10 @@ export const register = async (req, res) => {
             LastName, 
             email,
             roleId,
-            password: hashed_pass
+            password: hashed_pass,
+            Estado,
+            LastLogin,
+            Id_Location
         })
 
         await _user.save()
@@ -61,6 +71,9 @@ export const register = async (req, res) => {
             lastName: _user.LastName, 
             email: _user.email,
             roleId: _user.roleId,
+            Estado: _user.Estado,
+            LastLogin: _user.LastLogin,
+            Id_Location: _user.Id_Location
         }
 
         return res.status(201).json({data: u})
