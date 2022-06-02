@@ -104,8 +104,8 @@ OptionalTechInfo.belongsTo(TechnicalSpecification, { as: 'TechnicalSpecification
 TechnicalSpecification.hasOne(OptionalTechInfo, { foreignKey: 'Id_TechnicalSpecification' })
 
 
-Location.belongsTo(User, { as: 'User', foreignKey: 'Id_Location' })
-User.hasOne(Location, { foreignKey: 'Id_Location' })
+User.belongsTo(Location, { as: 'Location', foreignKey: 'Id_Location' })
+Location.hasMany(User, { foreignKey: 'Id_Location' })
 
 // Equipment.belongsToMany(TechnicalSpecification, { 
 //     through: 'EquipmentsTechnicals', 

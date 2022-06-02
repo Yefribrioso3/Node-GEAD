@@ -11,8 +11,11 @@ import User from '../Model/User.js'
 export const getAllUsers = async (req, res) => {
     try {
         // const users = await User.findAll({ include: [{ model: Project, as: 'projects'}, { model: Supplier, as: 'supplier'}, { model: EngArea, as: 'areas'}], attributes: ['id', 'name', 'lastName', 'email', 'status'] })
-        const users = await User.findAll({ where: { Estado : true}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'Estado', 'LastLogin', 'Id_Location'] })
+        const users = await User.findAll({ where: { Estado : true}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'Estado', 'LastLogin', 'Id_Location'], 
+        include: { all: true, nested: true } })
         
+        // const equipment = await Equipment.findAll({ where: { Estado : true} ,include: { all: true, nested: true } })
+
         return res.status(200).json({data: users})
     } catch (error) {
         // console.log(error)
@@ -22,7 +25,14 @@ export const getAllUsers = async (req, res) => {
 
 export const getUserByToken = async (req, res) => {
     try {   
-        return res.status(200).json({data: req.user})
+                
+        const email = req.user.dataValues.email;
+
+        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'Estado', 'password', 'LastLogin', 'Id_Location'], include: { all: true, nested: true }})
+        
+        const { password, ...rest } = _user.dataValues
+ 
+        return res.status(200).json({data: rest})
     } catch (error) {
         // console.log(error)
         return res.status(500).json(error)

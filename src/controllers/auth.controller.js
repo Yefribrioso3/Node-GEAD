@@ -8,7 +8,7 @@ export const login = async (req, res) => {
     const { email, password, LastLogin } = req.body
 
     try {
-        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'password', 'Estado', 'LastLogin', 'Id_Location']})
+        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'password', 'Estado', 'LastLogin', 'Id_Location'], include: { all: true, nested: true }})
         
         if (!_user) return res.status(404).json({msg: 'user not found'})
 
