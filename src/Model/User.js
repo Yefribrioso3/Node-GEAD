@@ -46,7 +46,11 @@ const User = db.define("User", {
     LastLogin: {
         type: DataTypes.DATE,
         allowNull: true
-    }
+    },
+    Area: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
 }, {
     freezeTableName: true,
     createdAt: false,

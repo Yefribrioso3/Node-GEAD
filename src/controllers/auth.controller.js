@@ -8,7 +8,7 @@ export const login = async (req, res) => {
     const { email, password, LastLogin } = req.body
 
     try {
-        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'password', 'Estado', 'LastLogin', 'Id_Location'], include: { all: true, nested: true }})
+        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'password', 'Estado', 'LastLogin', 'Id_Location', 'Area'], include: { all: true, nested: true }})
         
         if (!_user) return res.status(404).json({msg: 'user not found'})
 
@@ -35,7 +35,7 @@ export const login = async (req, res) => {
 }
 
 export const register = async (req, res) => {
-    let { Name, LastName, email, password, roleId, Estado, LastLogin, Id_Location } = req.body
+    let { Name, LastName, email, password, roleId, Estado, LastLogin, Id_Location, Area } = req.body
 
     if (!Name || !LastName || !email || !password || !Estado || !Id_Location)
         return res.status(400).json({msg: 'all fields are required'})
@@ -61,7 +61,8 @@ export const register = async (req, res) => {
             password: hashed_pass,
             Estado,
             LastLogin,
-            Id_Location
+            Id_Location,
+            Area
         })
 
         await _user.save()
@@ -73,7 +74,8 @@ export const register = async (req, res) => {
             roleId: _user.roleId,
             Estado: _user.Estado,
             LastLogin: _user.LastLogin,
-            Id_Location: _user.Id_Location
+            Id_Location: _user.Id_Location,
+            Area: _user.Area
         }
 
         return res.status(201).json({data: u})

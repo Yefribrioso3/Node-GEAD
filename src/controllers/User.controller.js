@@ -11,7 +11,7 @@ import User from '../Model/User.js'
 export const getAllUsers = async (req, res) => {
     try {
         // const users = await User.findAll({ include: [{ model: Project, as: 'projects'}, { model: Supplier, as: 'supplier'}, { model: EngArea, as: 'areas'}], attributes: ['id', 'name', 'lastName', 'email', 'status'] })
-        const users = await User.findAll({ where: { Estado : true}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'Estado', 'LastLogin', 'Id_Location'], 
+        const users = await User.findAll({ where: { Estado : true}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'Estado', 'LastLogin', 'Id_Location', 'Area'], 
         include: { all: true, nested: true } })
         
         // const equipment = await Equipment.findAll({ where: { Estado : true} ,include: { all: true, nested: true } })
@@ -28,7 +28,7 @@ export const getUserByToken = async (req, res) => {
                 
         const email = req.user.dataValues.email;
 
-        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'Estado', 'password', 'LastLogin', 'Id_Location'], include: { all: true, nested: true }})
+        const _user = await User.findOne({where: {email}, attributes: ['Id_Usuario', 'Name', 'LastName', 'email', 'roleId', 'Estado', 'password', 'LastLogin', 'Id_Location', 'Area'], include: { all: true, nested: true }})
         
         const { password, ...rest } = _user.dataValues
  

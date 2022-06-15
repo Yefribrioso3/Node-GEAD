@@ -100,6 +100,10 @@ const OptionalTechInfo = db.define("OptionalTechInfo", {
         type: DataTypes.STRING,
         allowNull: true
     },
+    MotivodeBaja: {
+        type: DataTypes.STRING,
+        allowNull: true
+    }
 },{
     freezeTableName: true,
     createdAt: false,

@@ -29,6 +29,7 @@ import FinancialInformation from "../Model/financialInformation.js"
 import OptionalTechInfo from "../Model/optionalTechInfo.js"
 import Location from "../Model/location.js"
 import User from "../Model/User.js"
+import role from "../Model/role.js"
 
 
 
@@ -106,6 +107,12 @@ TechnicalSpecification.hasOne(OptionalTechInfo, { foreignKey: 'Id_TechnicalSpeci
 
 User.belongsTo(Location, { as: 'Location', foreignKey: 'Id_Location' })
 Location.hasMany(User, { foreignKey: 'Id_Location' })
+
+User.belongsTo(role, { as: 'Roles', foreignKey: 'roleId' })
+role.hasMany(User, { foreignKey: 'roleId' })
+
+
+// roleId
 
 // Equipment.belongsToMany(TechnicalSpecification, { 
 //     through: 'EquipmentsTechnicals', 
