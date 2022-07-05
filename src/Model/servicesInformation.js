@@ -1,6 +1,6 @@
 // import { DataTypes } from 'sequelize';
 import pkg from 'sequelize';
-const  { DataTypes } = pkg;
+const { DataTypes } = pkg;
 import db from '../database/connection.js';
 
 const ServicesInformation = db.define("ServicesInformation", {
@@ -33,7 +33,19 @@ const ServicesInformation = db.define("ServicesInformation", {
         type: DataTypes.STRING,
         allowNull: false
     },
-},{
+    ResponsableEquipo: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    PlantaResponsable: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    AreaResponsable: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+}, {
     freezeTableName: true,
     createdAt: false,
     updatedAt: false,

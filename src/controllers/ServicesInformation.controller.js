@@ -52,7 +52,7 @@ export const getServicesInformationById = async (req, res) => {
 
 // --------------------   Delete   ------------------------
 export const deleteServicesInformationById = async (req, res) => {
-    
+
     const { id } = req.params;
 
     const servicesInformation = await ServicesInformation.findByPk(id);
@@ -91,6 +91,9 @@ export const updateServicesInformationById = async (req, res) => {
             DesinstallationReason: body.DesinstallationReason,
             ProcurementOrder: body.ProcurementOrder,
             Id_Equipment: body.Id_Equipment,
+            ResponsableEquipo: body.ResponsableEquipo,
+            PlantaResponsable: body.PlantaResponsable,
+            AreaResponsable: body.AreaResponsable,
         });
 
         res.json(servicesInformation);
@@ -181,7 +184,7 @@ export const updateServicesInformationById = async (req, res) => {
 //             .input('DesuseReason', sql.NVarChar, DesuseReason)
 //             .input('DesinstallationReason', sql.NVarChar, DesinstallationReason)
 //             .input('ProcurementOrder', sql.NVarChar, ProcurementOrder)
-//             .input("Id_Equipment", sql.Int, Id_Equipment) 
+//             .input("Id_Equipment", sql.Int, Id_Equipment)
 //             .query( queries.AddNewServicesInformacion )  // Lo ejecutamos y agregamos con una consulta query
 
 //         res.json('New Services Information')
@@ -219,7 +222,7 @@ export const updateServicesInformationById = async (req, res) => {
 //     res.sendStatus(204) //Envia respuesta vacia
 // };
 
-// // -----------------   Update ServicesInformation  ----------------------- 
+// // -----------------   Update ServicesInformation  -----------------------
 // export const updateServicesInformationById = async (req, res) => {
 //     const { DateOfInstallation, DateOfDesintallation, DesuseReason, DesinstallationReason, ProcurementOrder, Id_Equipment } = req.body;
 //     const { id } = req.params;
@@ -237,7 +240,7 @@ export const updateServicesInformationById = async (req, res) => {
 //         .input('DesinstallationReason', sql.VarChar, DesinstallationReason)
 //         .input('ProcurementOrder', sql.VarChar, ProcurementOrder)
 //         .input("Id_Equipment", sql.Int, Id_Equipment)
-//         .input('Id', sql.Int, id) 
+//         .input('Id', sql.Int, id)
 //         .query(queries.updateServicesInformacionByID);
 
 //     res.json({ DateOfInstallation, DateOfDesintallation, DesuseReason, DesinstallationReason, ProcurementOrder, Id_Equipment });
