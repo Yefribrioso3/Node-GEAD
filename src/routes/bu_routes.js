@@ -264,10 +264,10 @@ router.delete('/api/optionalTechInfo/:id',    deleteOptionalTechInfoById );
 // ================   User  ====================
 
 
-router.get('/api/user/', [authMdlw],            getAllUsers); 
-router.get('/api/user/user-data', [authMdlw],   getUserByToken ); //Optener por Token
-router.get('/api/user/:id', [authMdlw],         getUserById ); //Optener por id
-router.put('/api/user/:id', [authMdlw],         updateUser ); //Actualizar
+router.get('/api/user/',           getAllUsers); 
+router.get('/api/user/user-data',   getUserByToken ); //Optener por Token
+router.get('/api/user/:id',         getUserById ); //Optener por id
+router.put('/api/user/:id',         updateUser ); //Actualizar
 
 // ================   Location  ====================
 
