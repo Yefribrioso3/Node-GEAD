@@ -31,7 +31,12 @@ const Equipment = db.define("Equipment", {
         allowNull: false
     },
 },{
-    freezeTableName: true
+    freezeTableName: true,
+    tableName: 'Equipments',
+    schema: 'gead',
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false
 }
 );
 

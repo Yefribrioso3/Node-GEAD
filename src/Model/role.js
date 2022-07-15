@@ -15,6 +15,8 @@ const role = db.define("Roles", {
     }
 }, {
     freezeTableName: true,
+    tableName: 'Role',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

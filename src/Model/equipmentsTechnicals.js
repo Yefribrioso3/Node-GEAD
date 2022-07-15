@@ -23,6 +23,9 @@ const EquipmentsTechnicals = db.define("EquipmentsTechnicals", {
     }
 },{
     freezeTableName: true,
+
+    tableName: 'EquipmentsTechnicals',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

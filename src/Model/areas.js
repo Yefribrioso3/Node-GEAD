@@ -20,6 +20,8 @@ const Areas = db.define("Areas", {
     },
 },{
     freezeTableName: true,
+    tableName: 'Areas',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

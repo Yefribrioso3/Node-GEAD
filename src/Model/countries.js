@@ -22,6 +22,8 @@ const Countries = db.define("Countries", {
     },
 },{
     freezeTableName: true,
+    tableName: 'Countries',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

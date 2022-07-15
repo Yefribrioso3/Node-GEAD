@@ -19,6 +19,9 @@ const SelectNewTechSpec = db.define("SelectNewTechSpec", {
     },
 },{
     freezeTableName: true,
+
+    tableName: 'SelectNewTechSpec',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

@@ -19,6 +19,8 @@ const Line = db.define("Line", {
     },
 },{
     freezeTableName: true,
+    tableName: 'Line',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

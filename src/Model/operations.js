@@ -19,6 +19,8 @@ const Operations = db.define("Operations", {
     },
 },{
     freezeTableName: true,
+    tableName: 'Operations',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

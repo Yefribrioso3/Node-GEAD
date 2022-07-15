@@ -19,6 +19,9 @@ const SelectNewServicesInfo = db.define("SelectNewServicesInfo", {
     },
 },{
     freezeTableName: true,
+
+    tableName: 'SelectNewServicesInfo',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

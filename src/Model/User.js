@@ -53,6 +53,8 @@ const User = db.define("User", {
     },
 }, {
     freezeTableName: true,
+    tableName: 'User',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

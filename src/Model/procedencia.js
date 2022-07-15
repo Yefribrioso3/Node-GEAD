@@ -19,6 +19,8 @@ const Procedencia = db.define("Procedencia", {
     },
 },{
     freezeTableName: true,
+    tableName: 'Procedencia',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

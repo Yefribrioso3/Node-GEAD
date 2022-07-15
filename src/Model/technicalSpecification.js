@@ -51,6 +51,8 @@ const TechnicalSpecification = db.define("TechnicalSpecification", {
     },
 },{
     freezeTableName: true,
+    tableName: 'TechnicalSpecification',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

@@ -15,6 +15,8 @@ const LineTypes = db.define("LineTypes", {
     },
 },{
     freezeTableName: true,
+    tableName: 'LineType',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

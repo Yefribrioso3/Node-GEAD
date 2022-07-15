@@ -27,6 +27,8 @@ const Location = db.define("Location", {
     },
 },{
     freezeTableName: true,
+    tableName: 'Location',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

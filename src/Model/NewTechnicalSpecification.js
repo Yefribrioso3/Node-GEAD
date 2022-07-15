@@ -23,6 +23,9 @@ const NewTechnicalSpecification = db.define("NewTechnicalSpecification", {
     }
 },{
     freezeTableName: true,
+
+    tableName: 'NewTechnicalSpecification',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

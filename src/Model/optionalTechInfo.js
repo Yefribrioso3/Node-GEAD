@@ -110,6 +110,8 @@ const OptionalTechInfo = db.define("OptionalTechInfo", {
     }
 },{
     freezeTableName: true,
+    tableName: 'OptionalTechInfo',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

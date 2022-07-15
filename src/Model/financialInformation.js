@@ -142,6 +142,8 @@ const FinancialInformation = db.define("FinancialInformation", {
     },
 },{
     freezeTableName: true,
+    tableName: 'FinancialInformation',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

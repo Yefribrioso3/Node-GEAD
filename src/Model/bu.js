@@ -17,6 +17,8 @@ const BU = db.define("BU", {
     }
 }, {
     freezeTableName: true,
+    tableName: 'BU',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

@@ -20,6 +20,9 @@ const TechnicalSpecificationValues = db.define("TechnicalSpecificationValues", {
     },
 },{
     freezeTableName: true,
+    
+    tableName: 'TechnicalSpecificationValues',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

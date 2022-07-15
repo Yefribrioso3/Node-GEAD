@@ -19,6 +19,8 @@ const SubAreas = db.define("SubAreas", {
     },
 },{
     freezeTableName: true,
+    tableName: 'SubAreas',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

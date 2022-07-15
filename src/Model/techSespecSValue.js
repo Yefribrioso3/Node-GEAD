@@ -24,6 +24,9 @@ const TechSespecSValue = db.define("TechSespecSValue", {
     }
 },{
     freezeTableName: true,
+
+    tableName: 'TechSespecSValue',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false

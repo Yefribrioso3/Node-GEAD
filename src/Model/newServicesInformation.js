@@ -23,6 +23,9 @@ const NewServicesInformation = db.define("NewServicesInformation", {
     }
 },{
     freezeTableName: true,
+
+    tableName: 'NewServicesInformation',
+    schema: 'gead',
     createdAt: false,
     updatedAt: false,
     timestamps: false
