@@ -57,7 +57,8 @@ export default db
 
 export async function getConnection() {   
     try {
-        await db.authenticate();
+        await db.sync({ altrer: true })
+
         console.log("Database online")
     }catch (error)
     {
